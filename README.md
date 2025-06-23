@@ -12,9 +12,10 @@ API REST para gestionar productos. Permite crear, listar y buscar productos.
 **Request Body (JSON):**
 ```json
 {
-  "id": 1,
   "name": "Laptop",
-  "price": "1200.00"
+  "price": "1200.00",
+  "description": "...",
+  "img": "https://www...."
 }
 ```
 
@@ -23,7 +24,9 @@ API REST para gestionar productos. Permite crear, listar y buscar productos.
 {
   "id": 1,
   "name": "Laptop",
-  "price": "1200.00"
+  "price": "1200.00",
+  "description": "...",
+  "img": "https://www...."
 }
 ```
 
@@ -40,12 +43,16 @@ API REST para gestionar productos. Permite crear, listar y buscar productos.
   {
     "id": 1,
     "name": "Laptop",
-    "price": "1200.00"
+    "price": "1200.00",
+    "description": "...",
+    "img": "https://www...."
   },
   {
     "id": 2,
     "name": "Mouse",
-    "price": "25.00"
+    "price": "25.00",
+    "description": "...",
+    "img": "https://www...."
   }
 ]
 ```
@@ -71,7 +78,9 @@ API REST para gestionar productos. Permite crear, listar y buscar productos.
   {
     "id": 1,
     "name": "Laptop",
-    "price": "1200.00"
+    "price": "1200.00",
+    "description": "...",
+    "img": "https://www...."
   }
 ]
 ```
