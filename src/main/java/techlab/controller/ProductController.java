@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
+@CrossOrigin(origins = "${frontend.url}")
 public class ProductController {
 
   private ProductService service;
@@ -17,12 +18,12 @@ public class ProductController {
     this.service = service;
   }
 
-  @PostMapping("/")
+  @PostMapping("")
   public ProductResponseDTO createProduct(@RequestBody ProductRequestDTO requestDTO) {
     return this.service.createProduct(requestDTO);
   }
 
-  @GetMapping("/")
+  @GetMapping("")
   public List<ProductResponseDTO> getProducts() {
     return this.service.getProducts();
   }

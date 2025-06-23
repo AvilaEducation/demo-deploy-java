@@ -38,7 +38,7 @@ public class ProductService {
   }
 
   public List<ProductResponseDTO> searchProductByName(String queryName) {
-    List<Product> foundProducts = this.repository.findProductByName(queryName);
+    List<Product> foundProducts = this.repository.findByNameContainingIgnoreCase(queryName);
 
     if (foundProducts.isEmpty()) {
       throw new ProductNotFoundException(queryName);
