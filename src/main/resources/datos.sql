@@ -1,3 +1,5 @@
-INSERT INTO `product` (`name`, price) VALUES ('Laptop', '1200.00');
-INSERT INTO `product` (`name`, price) VALUES ('Mouse', '25.00');
-INSERT INTO `product` (`name`, price) VALUES ('Teclado', '45.00');
+INSERT INTO `product` (`name`, price, description, img)
+VALUES
+('Laptop', '1200.00'),
+('Mouse', '25.00'),
+('Teclado', '45.00');

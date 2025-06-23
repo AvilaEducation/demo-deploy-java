@@ -8,7 +8,7 @@ import techlab.service.ProductService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/products")
 public class ProductController {
 
   private ProductService service;
