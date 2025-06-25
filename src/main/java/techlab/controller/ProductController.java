@@ -1,5 +1,7 @@
 package techlab.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import techlab.dto.request.ProductRequestDTO;
 import techlab.dto.response.ProductResponseDTO;
@@ -19,8 +21,9 @@ public class ProductController {
   }
 
   @PostMapping("")
-  public ProductResponseDTO createProduct(@RequestBody ProductRequestDTO requestDTO) {
-    return this.service.createProduct(requestDTO);
+  public ResponseEntity<ProductResponseDTO> createProduct(
+      @RequestBody ProductRequestDTO requestDTO) {
+    return ResponseEntity.status(HttpStatus.CREATED).body(this.service.createProduct(requestDTO));
   }
 
   @GetMapping("")
@@ -31,5 +34,16 @@ public class ProductController {
   @GetMapping("/search")
   public List<ProductResponseDTO> searchProductsByName(@RequestParam String queryName) {
     return this.service.searchProductByName(queryName);
+  }
+
+  @PutMapping("/{id}")
+  public ProductResponseDTO updateProduct(@PathVariable Long id,
+      @RequestBody ProductRequestDTO requestDTO) {
+    return this.service.updateProduct(id, requestDTO);
+  }
+
+  @DeleteMapping("/{id}")
+  public ProductResponseDTO deleteProduct(@PathVariable Long id) {
+    return this.service.deleteProduct(id);
   }
 }

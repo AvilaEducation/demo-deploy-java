@@ -50,13 +50,35 @@ public class ProductService {
         .toList();
   }
 
+  public ProductResponseDTO updateProduct(Long id, ProductRequestDTO productRequestDTO) {
+    Product product = this.repository.findById(id)
+        .orElseThrow(() -> new ProductNotFoundException(id.toString()));
+    BeanUtils.copyProperties(productRequestDTO, product);
+
+    this.repository.save(product);
+
+    ProductResponseDTO productResponseDTO = new ProductResponseDTO();
+    BeanUtils.copyProperties(product, productResponseDTO);
+    return productResponseDTO;
+  }
+
+  public ProductResponseDTO deleteProduct(Long id) {
+    Product product = this.repository.findById(id)
+        .orElseThrow(() -> new ProductNotFoundException(id.toString()));
+    this.repository.delete(product);
+
+    ProductResponseDTO productResponseDTO = new ProductResponseDTO();
+    BeanUtils.copyProperties(product, productResponseDTO);
+    return productResponseDTO;
+  }
+
   /**
    * Convertir la entidad de *Product* en un *ProductResponseDTO* para la respuesta
    *
    * @param p - producto a convertir
    * @return ProductResponseDTO
    */
-  public ProductResponseDTO mapperToDTO(Product p) {
+  private ProductResponseDTO mapperToDTO(Product p) {
     ProductResponseDTO dto = new ProductResponseDTO();
     BeanUtils.copyProperties(p, dto);
     return dto;
