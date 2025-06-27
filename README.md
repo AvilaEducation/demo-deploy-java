@@ -17,11 +17,12 @@ API REST para gestionar productos
 
 ## 🔗 Enlaces importantes
 
-| Aplicación           | URL                                                                                                  |
-|----------------------|------------------------------------------------------------------------------------------------------|
-| 🌐 Frontend          | [https://frontend-techlab.up.railway.app](https://frontend-techlab.up.railway.app)                   |
-| 🔧 Backend API       | [https://backend-java-techlab.up.railway.app](https://backend-java-techlab.up.railway.app)           |
-| 📄 Documentación API | [https://backend-java-techlab.up.railway.app/docs](https://backend-java-techlab.up.railway.app/docs) |
+| Aplicación           | URL                                                                                                        |
+|----------------------|------------------------------------------------------------------------------------------------------------|
+| 🌐 Frontend          | [https://frontend-techlab.up.railway.app](https://frontend-techlab.up.railway.app)                         |
+| 🔧 Backend API       | [https://backend-java-techlab.up.railway.app](https://backend-java-techlab.up.railway.app)                 |
+| 📄 Documentación API | [https://backend-java-techlab.up.railway.app/docs](https://backend-java-techlab.up.railway.app/docs)       |
+| 📄 Front-end Repo    | [https://github.com/AvilaEducation/demo-deploy-react](https://github.com/AvilaEducation/demo-deploy-react) |
 
 ---
 
@@ -50,3 +51,19 @@ la [documentación completa](https://backend-java-techlab.up.railway.app/docs).
 - Tailwind CSS (en el frontend)
 
 ---
+
+## ⚙️ Instalación y ejecución local
+
+1. **Clonar el repositorio**
+
+   ```bash
+   git clone git@github.com:AvilaEducation/demo-deploy-java.git
+   ```
+
+2. **Ejecuta la aplicación**
+    * Puedes abrir la aplicación con tu IDE favorito y ejecutar el archivo **DeployJavaApplication**
+    * Si tienes maven instalado puedes usar:
+   ```bash
+    cd demo-deploy-java
+    mvn spring-boot:run
+   ```
