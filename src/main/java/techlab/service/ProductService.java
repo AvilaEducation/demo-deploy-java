@@ -50,6 +50,13 @@ public class ProductService {
         .toList();
   }
 
+  public ProductResponseDTO searchProductById(Long id) {
+    Product product = this.repository.findById(id)
+        .orElseThrow(() -> new ProductNotFoundException(id.toString()));
+
+    return this.mapperToDTO(product);
+  }
+
   public ProductResponseDTO updateProduct(Long id, ProductRequestDTO productRequestDTO) {
     Product product = this.repository.findById(id)
         .orElseThrow(() -> new ProductNotFoundException(id.toString()));
@@ -57,9 +64,7 @@ public class ProductService {
 
     this.repository.save(product);
 
-    ProductResponseDTO productResponseDTO = new ProductResponseDTO();
-    BeanUtils.copyProperties(product, productResponseDTO);
-    return productResponseDTO;
+    return this.mapperToDTO(product);
   }
 
   public ProductResponseDTO deleteProduct(Long id) {
@@ -67,9 +72,7 @@ public class ProductService {
         .orElseThrow(() -> new ProductNotFoundException(id.toString()));
     this.repository.delete(product);
 
-    ProductResponseDTO productResponseDTO = new ProductResponseDTO();
-    BeanUtils.copyProperties(product, productResponseDTO);
-    return productResponseDTO;
+    return this.mapperToDTO(product);
   }
 
   /**

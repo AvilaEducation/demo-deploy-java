@@ -1,86 +1,52 @@
-# 🛍️ Product API - Uso
+# 🛍️ Product API - by Talent Tech
 
-API REST para gestionar productos. Permite crear, listar y buscar productos.
-
----
-
-## ➕ Crear producto
-
-**Método:** `POST`  
-**URL:** `/product/`
-
-**Request Body (JSON):**
-```json
-{
-  "name": "Laptop",
-  "price": "1200.00",
-  "description": "...",
-  "img": "https://www...."
-}
-```
-
-**Response (200 OK):**
-```json
-{
-  "id": 1,
-  "name": "Laptop",
-  "price": "1200.00",
-  "description": "...",
-  "img": "https://www...."
-}
-```
+API REST para gestionar productos
 
 ---
 
-## 📋 Obtener todos los productos
+## 🚀 Características principales
 
-**Método:** `GET`  
-**URL:** `/product/`
-
-**Response (200 OK):**
-```json
-[
-  {
-    "id": 1,
-    "name": "Laptop",
-    "price": "1200.00",
-    "description": "...",
-    "img": "https://www...."
-  },
-  {
-    "id": 2,
-    "name": "Mouse",
-    "price": "25.00",
-    "description": "...",
-    "img": "https://www...."
-  }
-]
-```
+- Gestión completa de productos: crear, leer, actualizar y eliminar.
+- Búsqueda avanzada por nombre de producto.
+- Soporte para imágenes, stock, categorías y descripciones detalladas.
+- Configuración CORS para integración segura con frontend.
+- DTOs para una comunicación limpia entre cliente y servidor.
+- Código desarrollado con Spring Boot para máxima robustez y escalabilidad.
 
 ---
 
-## 🔍 Buscar productos por nombre
+## 🔗 Enlaces importantes
 
-**Método:** `GET`  
-**URL:** `/product/search?queryName={nombre}`
+| Aplicación           | URL                                                                                                  |
+|----------------------|------------------------------------------------------------------------------------------------------|
+| 🌐 Frontend          | [https://frontend-techlab.up.railway.app](https://frontend-techlab.up.railway.app)                   |
+| 🔧 Backend API       | [https://backend-java-techlab.up.railway.app](https://backend-java-techlab.up.railway.app)           |
+| 📄 Documentación API | [https://backend-java-techlab.up.railway.app/docs](https://backend-java-techlab.up.railway.app/docs) |
 
-**Parámetro:**  
-- `queryName`: Nombre (o parte del nombre) del producto a buscar
+---
 
-**Ejemplo:**  
-```
-/product/search?queryName=lap
-```
+## 📋 Endpoints disponibles
 
-**Response (200 OK):**
-```json
-[
-  {
-    "id": 1,
-    "name": "Laptop",
-    "price": "1200.00",
-    "description": "...",
-    "img": "https://www...."
-  }
-]
-```
+- `POST /products` – Crear un nuevo producto.
+- `GET /products` – Listar todos los productos.
+- `GET /products/search?queryName=` – Buscar productos por nombre.
+- `GET /products/{id}` – Obtener un producto por ID.
+- `PUT /products/{id}` – Actualizar un producto existente.
+- `DELETE /products/{id}` – Eliminar un producto por ID.
+
+Para más detalles, consultar
+la [documentación completa](https://backend-java-techlab.up.railway.app/docs).
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- Java
+- Spring Boot
+- Maven
+- REST API
+- DTO pattern
+- CORS
+- Tailwind CSS (en el frontend)
+
+---
